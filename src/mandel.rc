@@ -1,0 +1,134 @@
+// <res.rc> -*- coding: cp932; mode: c++ -*-
+//
+// Project mandel
+// Copyright (C) 2022 neige68
+// https://github.com/neige68/mandel
+//
+// - Resource Script - 手動変更リソーススクリプト
+//
+
+// このファイルは Visual Studio IDE で編集しない。
+// Visual Studio IDE で編集するのは resource.rc, resource.h とする。
+
+// our
+#include "fltrngvl.rh"
+#include "mandel.rh"
+#include "version.h"
+
+// owl
+#include <owl/editfile.rh>
+#include <owl/except.rh>
+#include <owl/version.h>
+#include <owl/window.rh>
+
+// ms
+#include <winres.h>
+
+//------------------------------------------------------------
+//
+// バージョン情報
+//
+1 VERSIONINFO
+    FILEVERSION     VER_FILEVERSION
+    PRODUCTVERSION  VER_PRODUCTVERSION
+    FILEOS          VOS__WINDOWS32
+    FILETYPE        VFT_APP
+#ifdef NDEBUG    
+    FILEFLAGSMASK   0
+    FILEFLAGS       0
+#else
+    FILEFLAGSMASK VS_FF_DEBUG | VS_FF_SPECIALBUILD
+    FILEFLAGS VS_FFI_FILEFLAGSMASK
+#endif
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "041103A4" // 日本語(0x411), CP932(0x3a4)
+        {
+            VALUE "CompanyName", VER_COMPANYNAME
+            VALUE "FileDescription", VER_FILEDESCRIPTION
+            VALUE "FileVersion", VER_FILEVERSION_STR
+            VALUE "InternalName", "MANDEL"
+            VALUE "LegalCopyright", VER_LEGALCOPYRIGHT
+            VALUE "OriginalFilename", "MANDEL.EXE"
+            VALUE "ProductName", VER_PRODUCTNAME
+            VALUE "ProductVersion", VER_PRODUCTVERSION_STR
+#ifdef NDEBUG
+#else
+            VALUE "SpecialBuild", "Debug Version"
+#endif
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x0411, 0x03a4
+    }
+}
+
+//------------------------------------------------------------
+//
+// アイコン
+//
+IDI_APP            ICON           "mandel.ico"
+
+//------------------------------------------------------------
+//
+// 文字列テーブル
+//
+STRINGTABLE
+{
+    IDS_APPNAME, VER_PRODUCTNAME
+}
+
+// <owl/validate.rc> の翻訳、拡張
+STRINGTABLE
+{
+    IDS_VALPXPCONFORM, "入力データは次の形式に適合させてください :\n""%s"""
+    IDS_VALINVALIDCHAR, "入力データ中に使用できない文字があります"
+    IDS_VALNOTINRANGE, "入力する値は %ld から %ld の範囲にしてください"
+    IDS_VALNOTINLIST, "入力するデータは有効リストの範囲にしてください"
+    IDS_VALREQUIRED, "入力が必要です"
+    IDS_VALNONBLANK, "空白でない入力が必要です"
+    IDS_VALCAPTION, "入力エラー"
+    IDS_VALNOTINFLOATRANGE, "入力する値は %s から %s の範囲にしてください"
+}
+
+// とりあえず流用
+#include <owl/except.rc>
+
+//------------------------------------------------------------
+//
+// アクセラレータ
+//
+MAIN_ACCELERATORS ACCELERATORS
+{
+    VK_F5, CM_VIEWREFRESH, VIRTKEY
+    "^R", CM_COLORRANDOM
+    "^S", CM_FILESAVEAS
+}
+
+//------------------------------------------------------------
+//
+// メニュー
+//
+MAIN_MENU MENU
+{
+    POPUP "ファイル(&F)"
+    {
+        MENUITEM "名前を付けて保存(&A)...\tCtrl+S", CM_FILESAVEAS
+            MENUITEM "終了(&X)\tAlt+F4", CM_EXIT
+    }
+    POPUP "設定(&C)"
+    {
+        MENUITEM "色設定(&C)...", CM_COLOR
+        MENUITEM "ランダム色設定(&R)\tCtrl+R", CM_COLORRANDOM
+    }
+    POPUP "ヘルプ(&H)"
+    {
+        MENUITEM "バージョン情報(&A)", CM_HELPABOUT
+    }
+}
+
+//------------------------------------------------------------
+
+// end of <mandel.rc>

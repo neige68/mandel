@@ -1,0 +1,21 @@
+// <fltrngvl.rh>  -*- coding: cp932; mode: c++ -*-
+//
+// Project mandel
+// Copyright (C) 2022 neige68
+// https://github.com/neige68/mandel
+//
+// - TFloatRangeValidator - 浮動小数点範囲バリデータ
+//
+
+#ifndef fltrngvl_rh
+#define fltrngvl_rh
+
+// 流用
+#include <owl/validate.rh>
+
+// 追加
+#define IDS_VALNOTINFLOATRANGE          32529
+
+#endif // fltrngvl_rh
+
+// end of <fltrngvl.rh>

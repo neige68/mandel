@@ -1,0 +1,31 @@
+// <pointd.cpp> -*- coding: cp932 -*-
+//
+// Project mandel
+// Copyright (C) 2022 neige68
+// https://github.com/neige68/mandel
+//
+// - TPointD - TPoint ‚Ì double ’l”Å
+//
+
+#include <owl/pch.h>
+#pragma hdrstop
+
+// my
+#include "pointd.h"
+
+using namespace std;
+using namespace owl;
+
+//------------------------------------------------------------
+//
+// struct TPointD - TPoint ‚Ì double ’l”Å
+//
+
+tostream& operator << (tostream& os, const TPointD& o)
+{
+    return os << _T('(') << o.x << _T(',') << o.y << _T(')');
+}
+
+//------------------------------------------------------------
+
+// end of <pointd.cpp>

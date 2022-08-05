@@ -1,0 +1,156 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include <winres.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 (日本) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include <winres.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUT DIALOGEX 0, 0, 201, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "バージョン情報"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,75,41,50,14
+    LTEXT           "mandel Ver.0.00.00",IDC_TITLE,69,7,64,8
+    LTEXT           "(C) neige68",IDC_COPYRIGHT,81,22,38,8
+END
+
+IDD_COLOR DIALOGEX 0, 0, 313, 178
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "色設定"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,198,157,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,256,157,50,14
+    GROUPBOX        "発散部分",IDC_STATIC,6,6,168,90
+    LTEXT           "値",IDC_STATIC,72,12,9,8
+    LTEXT           "回転数",IDC_STATIC,132,12,25,8
+    LTEXT           "&R:",IDC_STATIC,12,24,8,8
+    COMBOBOX        IDC_RVALUE,36,24,78,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    EDITTEXT        IDC_RROTATION,126,24,40,14,ES_AUTOHSCROLL
+    LTEXT           "&G:",IDC_STATIC,12,42,8,8
+    COMBOBOX        IDC_GVALUE,36,42,78,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_GROTATION,126,42,40,14,ES_AUTOHSCROLL
+    LTEXT           "&B:",IDC_STATIC,12,60,8,8
+    COMBOBOX        IDC_BVALUE,36,60,78,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_BROTATION,126,60,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "非発散部分(&N)",IDC_STATIC,180,6,126,90
+    LTEXT           "R:",IDC_STATIC,186,24,8,8
+    EDITTEXT        IDC_RNODIVERGENCE,204,24,40,14,ES_AUTOHSCROLL | WS_GROUP
+    LTEXT           "G:",IDC_STATIC,186,42,8,8
+    EDITTEXT        IDC_GNODIVERGENCE,204,42,40,14,ES_AUTOHSCROLL
+    LTEXT           "B:",IDC_STATIC,186,60,8,8
+    EDITTEXT        IDC_BNODIVERGENCE,204,60,40,14,ES_AUTOHSCROLL
+    CONTROL         "最遅発散と同じ(&S)",IDC_SAMEASLATEST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,192,78,72,10
+    PUSHBUTTON      "色選択(&C)",IDC_NODIVERGENCESELECT,252,24,48,18
+    LTEXT           "サンプル: ←早発散",IDC_STATIC,6,102,62,8
+    LTEXT           "遅発散→",IDC_STATIC,216,102,32,8
+    LTEXT           "非発散↓",IDC_STATIC,270,102,29,8
+    CONTROL         "",IDC_SAMPLEPOSITION,"Static",SS_BLACKFRAME,6,114,300,36
+    CONTROL         "",IDC_SAMPLE,"Static",SS_BITMAP,6,114,16,16
+    PUSHBUTTON      "ランダム(&M)",IDC_RANDOM,138,156,50,14,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 194
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_COLOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 306
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 171
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_ABOUT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_COLOR AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // 日本語 (日本) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

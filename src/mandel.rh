@@ -1,0 +1,38 @@
+// <mandel.rh>  -*- coding: cp932; mode: c++ -*-
+//
+// Project mandel
+// Copyright (C) 2022 neige68
+// https://github.com/neige68/mandel
+//
+// - Resource IDs - 手動変更リソースID
+//
+
+// このファイルは Visual Studio IDE で編集しない。
+// Visual Studio IDE で編集するのは resource.rc, resource.h とする。
+
+#ifndef MANDEL_RH
+#define MANDEL_RH
+
+#include "resource.h"           // Visual Studio IDE 編集用
+
+// アイコン 5000 から
+#define IDI_APP                                 5000
+
+// 文字列 17000 から 
+#define IDS_APPNAME                             17000
+
+// アクセラレータ
+#define MAIN_ACCELERATORS                       1
+
+// メニュー
+#define MAIN_MENU                               1
+
+// コマンド
+#define CM_VIEWREFRESH                          200
+#define CM_COLOR                                201
+#define CM_COLORRANDOM                          202
+#define CM_HELPABOUT                            203
+
+#endif // MANDEL_RH
+
+// end of <mandel.rh>
