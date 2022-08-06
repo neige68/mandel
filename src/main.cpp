@@ -17,10 +17,13 @@
 #include "version.h"
 
 // owl
-#include <owl/applicat.h>       // TAplication
-#include <owl/decframe.h>       // TDecoratedFrame
-#include <owl/profile.h>        // TProfile
-#include <owl/scroller.h>       // TScroller
+#include <owl/applicat.h>       // owl::TAplication
+#include <owl/decframe.h>       // owl::TDecoratedFrame
+#include <owl/docview.rh>       // CM_FILESAVEAS —¬—p
+#include <owl/opensave.h>       // owl::TOpenSaveDialog
+#include <owl/profile.h>        // owl::TProfile
+#include <owl/scroller.h>       // owl::TScroller
+#include <owl/string.h>         // owl::TString
 
 // ms
 #include <gdiplus.h>            // Gdiplus::Bitmap

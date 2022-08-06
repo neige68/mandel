@@ -16,6 +16,10 @@
 // owl
 #include <owl/profile.h>        // owl::TProfile
 #include <owl/registry.h>       // owl::TRegKey
+#include <owl/string.h>         // owl::TString
+
+// ms
+#include "ShlObj_core.h"        // SHGetKnownFolderPath
 
 // std
 #include <filesystem>           // std::filesystem::path

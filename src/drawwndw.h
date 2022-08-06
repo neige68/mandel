@@ -14,6 +14,10 @@
 #include "pointd.h"             // TPointD
 #include "colormap.h"           // TColorMap
 
+// owl
+#include <owl/scroller.h>       // owl::TScroller
+#include <owl/statusba.h>       // owl::TStatusBar
+
 // std
 #include <queue>                // std::queue
 

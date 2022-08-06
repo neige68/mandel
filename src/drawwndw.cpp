@@ -17,6 +17,7 @@
 #include "misc.h"               // TProfileFileName
 
 // owl
+#include <owl/dibitmap.h>       // owl::TDiBitmap
 #include <owl/profile.h>        // owl::TProfile
 
 // std

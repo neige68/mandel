@@ -14,8 +14,9 @@
 #include "colormap.h"           // TColorMap
 
 // owl
-#include <owl/combobox.h>       // TComboxData
-#include <owl/dialog.h>         // TDialog
+#include <owl/combobox.h>       // owl::TComboxData
+#include <owl/dialog.h>         // owl::TDialog
+#include <owl/static.h>         // owl::TStatic
 
 //------------------------------------------------------------
 //

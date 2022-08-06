@@ -52,8 +52,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /D__TRACE /D__WARN /D__DEBUG
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS")
 
 add_compile_definitions(_WIN32_WINNT=0x0600) # Vista 以上
-add_compile_definitions(_CRT_RAND_S) # TODO: いる?
-add_compile_definitions(_OWLALLPCH) # TODO: OWLPCH にするべき
+add_compile_definitions(_OWLPCH)
 add_compile_definitions(UNICODE;_UNICODE)
 add_link_options(/ENTRY:wWinMainCRTStartup)
 

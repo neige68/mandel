@@ -17,7 +17,9 @@
 #include "fltrngvl.h"           // TFloatRangeValidator
 
 // owl
+#include <owl/checkbox.h>       // owl::TCheckBox
 #include <owl/chooseco.h>       // owl::TChooseColorDialog
+#include <owl/edit.h>           // owl::TEdit
 
 // boost
 #include <boost/scope_exit.hpp> // BOOST_SCOPE_EXIT_ALL
