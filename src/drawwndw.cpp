@@ -36,7 +36,7 @@ DIAG_DEFINE_GROUP_INIT("MANDEL.INI", DRAWWNDW, true, 1);
 
 //------------------------------------------------------------
 
-// マンデルブロー集合生成漸化式 発散判定回数
+// マンデルブロ集合生成漸化式 発散判定回数
 // return : [0,iterationLimit) ; 発散判定された場合の反復回数
 //          iterationLimit ; 発散判定されなかった場合
 static int MandelbrotDivergenceIteration(double cx, double cy,

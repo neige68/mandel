@@ -141,8 +141,8 @@ private:
     TPoint CCDragStart; // ドラッグ開始クライアント座標、未使用時(-1,-1)
     TPoint ScrollerPosDragStart; // ドラッグ開始時のスクローラ位置
     TColorMap ColorMap;
-    int IterationLimit; // マンデルブロー集合生成漸化式繰り返し回数限度
-    double DivergenceThresholdAbs; // マンデルブロー集合生成発散判定絶対値閾値
+    int IterationLimit; // マンデルブロ集合生成漸化式繰り返し回数限度
+    double DivergenceThresholdAbs; // マンデルブロ集合生成発散判定絶対値閾値
     DWORD TickDrew; // 描画にかかった時間[msec]
 
     DECLARE_RESPONSE_TABLE(TDrawWindow);
