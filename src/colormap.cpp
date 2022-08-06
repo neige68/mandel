@@ -17,7 +17,7 @@
 #include "misc.h"               // random
 
 // owl
-#include <owl/color.h>          // TColor
+#include <owl/color.h>          // owl::TColor
 
 using namespace std;
 using namespace owl;

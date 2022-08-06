@@ -14,9 +14,6 @@
 #include "fltrngvl.h"
 #include "fltrngvl.rh"
 
-// std
-#include <iostream>
-
 using namespace std;
 using namespace owl;
 
