@@ -3,6 +3,7 @@
 # Project try-mandel
 # Copyright (C) 2022 neige68
 # https://github.com/neige68/mandel
+# This program is released under license GPLv3
 #
 
 cmake_minimum_required(VERSION 3.16)

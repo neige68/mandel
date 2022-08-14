@@ -3,6 +3,7 @@
 // Project mandel
 // Copyright (C) 2022 neige68
 // https://github.com/neige68/mandel
+// This program is released under license GPLv3
 //
 // - TColorMap - [0,1] の double 値から色へのマップ
 //

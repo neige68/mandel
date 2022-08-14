@@ -4,6 +4,7 @@ rem
 rem Project mandel
 rem Copyright (C) 2022 neige68
 rem https://github.com/neige68/mandel
+rem This program is released under license GPLv3
 rem
 
 setlocal
