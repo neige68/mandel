@@ -88,6 +88,8 @@ void TAboutDialog::SetupWindow()
     // ‰¡•ûŒü’†‰›‚ÉˆÚ“®
     CenteringDlgItem(*this, IDC_TITLE);
     CenteringDlgItem(*this, IDC_COPYRIGHT);
+    CenteringDlgItem(*this, IDC_URL);
+    CenteringDlgItem(*this, IDC_LICENSE);
 };
 
 //------------------------------------------------------------
