@@ -615,15 +615,16 @@ void TDrawWindow::EvTimer(uint timerId)
 void TDrawWindow::EvMouseWheel(uint fwKeys, int zDelta, const TPoint& scPoint)
 {
     // scPoint: 画面の左上隅を基準としたポインターの座標
-#if 1 // 
+    static int wheelContinuous = TProfile{_T("Draw"), TProfileFileName::Instance().GetFilePath()}.GetInt(_T("WheelContinuous"), 1);
     double rate = 1;
-    if (zDelta <= -WHEEL_DELTA) // down
-        rate = 0.5;             // zoom out
-    else if (zDelta >= WHEEL_DELTA) // up
-        rate = 2;                   // zoom in
-#else // 連続値
-    double rate = pow(2, zDelta / WHEEL_DELTA);
-#endif
+    if (wheelContinuous) // 連続値
+        rate = pow(2, zDelta / WHEEL_DELTA);
+    else {
+        if (zDelta <= -WHEEL_DELTA) // down
+            rate = 0.5;             // zoom out
+        else if (zDelta >= WHEEL_DELTA) // up
+            rate = 2;                   // zoom in
+    }
     Zoom(rate, MapScreenToClient(scPoint));
 }
 
