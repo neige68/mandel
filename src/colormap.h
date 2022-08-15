@@ -36,9 +36,9 @@ public:
 
     // *** constructors ***
     TColorMap(int rValue = cmv0to255, double rRotation = 1,
-              int gValue = cmv0to255, double gRotation = 8,
-              int bValue = cmv0to255, double bRotation = 64,
-              owl::TColor noDivergence = owl::TColor{0, 0, 0},
+              int gValue = cmv0to255, double gRotation = 1,
+              int bValue = cmvAlways0, double bRotation = 1,
+              owl::TColor noDivergence = owl::TColor{255, 255, 0},
               bool noDivergenceSameAsLatest = false);
     TColorMap(const owl::tstring& encoded) { Decode(encoded); }
 
