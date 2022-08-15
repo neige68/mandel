@@ -60,6 +60,7 @@ public:
     owl::uint Transfer(void* buffer, owl::TTransferDirection direction) override;
 
     // *** response ***
+    void CmReset();
     void CmRandom();
     void CmNoDivergenceSelect();
     void EvDivergenceChange();

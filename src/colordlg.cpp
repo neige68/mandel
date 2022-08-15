@@ -124,6 +124,7 @@ void TColorDialog::TXferBuffer::SetColorMap(const TColorMap& m)
 TColorDialog::TXferBuffer TColorDialog::Data;
 
 DEFINE_RESPONSE_TABLE1(TColorDialog, TDialog)
+    EV_COMMAND(IDC_RESET, CmReset),
     EV_COMMAND(IDC_RANDOM, CmRandom),
     EV_COMMAND(IDC_NODIVERGENCESELECT, CmNoDivergenceSelect),
     EV_CBN_SELCHANGE(IDC_RVALUE, EvDivergenceChange),
@@ -206,6 +207,15 @@ uint TColorDialog::Transfer(void* buffer, TTransferDirection direction)
     }
     //
     return r;
+}
+
+void TColorDialog::CmReset()
+{
+    TColorMap cm;
+    Data.SetColorMap(cm);
+    TransferData(tdSetData);
+    UpdateSample();
+    UpdateState();
 }
 
 void TColorDialog::CmRandom()
