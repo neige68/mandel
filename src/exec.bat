@@ -1,7 +1,7 @@
 @rem <exec.bat> -*- coding: cp932-dos -*- - exec script
 @echo off
 rem
-rem Project mandel
+rem Project GoldenMandel
 rem Copyright (C) 2022 neige68
 rem https://github.com/neige68/mandel
 rem This program is released under license GPLv3
@@ -10,7 +10,7 @@ rem
 setlocal
 pushd %~dp0
 set @config=debug
-set @name=mandel
+set @name=GoldenMandel
 set @verbose=
 set @build=..\build
 :loop

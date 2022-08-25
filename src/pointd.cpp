@@ -1,6 +1,6 @@
 // <pointd.cpp> -*- coding: cp932 -*-
 //
-// Project mandel
+// Project GoldenMandel
 // Copyright (C) 2022 neige68
 // https://github.com/neige68/mandel
 // This program is released under license GPLv3

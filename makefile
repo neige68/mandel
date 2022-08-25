@@ -1,6 +1,6 @@
 # <makefile>
 #
-# Project mandel
+# Project GoldenMandel
 # Copyright (C) 2022 neige68
 # https://github.com/neige68/mandel
 #

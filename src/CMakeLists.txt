@@ -1,6 +1,6 @@
 # <CMakeLists.txt> -*- coding: utf-8 -*-
 #
-# Project try-mandel
+# Project GoldenMandel
 # Copyright (C) 2022 neige68
 # https://github.com/neige68/mandel
 # This program is released under license GPLv3
@@ -12,7 +12,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON) # TODO: いる?
 # スタティックリンク
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
-project(try-mandel CXX)
+project(GoldenMandel CXX)
 
 #------------------------------------------------------------
 #
@@ -57,7 +57,7 @@ add_compile_definitions(_OWLPCH)
 add_compile_definitions(UNICODE;_UNICODE)
 add_link_options(/ENTRY:wWinMainCRTStartup)
 
-add_executable(mandel # TODO: WIN32 とかは?
+add_executable(GoldenMandel # TODO: WIN32 とかは?
     main.cpp misc.cpp pointd.cpp drawwndw.cpp colordlg.cpp colormap.cpp fltrngvl.cpp
     mandel.rc resource.rc)
 

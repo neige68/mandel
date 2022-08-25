@@ -1,6 +1,6 @@
 // <main.cpp> -*- coding: cp932 -*-
 //
-// Project mandel
+// Project GoldenMandel
 // Copyright (C) 2022 neige68
 // https://github.com/neige68/mandel
 // This program is released under license GPLv3
@@ -39,7 +39,7 @@
 using namespace std;
 using namespace owl;
 
-DIAG_DEFINE_GROUP_INIT("MANDEL.INI", MAIN, true, 1);
+DIAG_DEFINE_GROUP_INIT("GoldenMandel.INI", MAIN, true, 1);
 
 //------------------------------------------------------------
 //
@@ -185,8 +185,8 @@ void TMyMainWindow::CmFileSaveAs()
                                            const_cast<TCHAR*>(_T("jpg")));
     // ファイル名生成
     time_t t = time(0);
-    TCHAR bufFileName[24+1];
-    _tcsftime(bufFileName, size(bufFileName), _T("mandel %Y-%m-%d %H%M%S"), localtime(&t));
+    TCHAR bufFileName[34+1];
+    _tcsftime(bufFileName, size(bufFileName), _T("GoldenMandel %Y-%m-%d %H%M%S"), localtime(&t));
     SetFileName(FileData, bufFileName);
     //
     if (TFileSaveDialog(this, FileData).Execute() != IDOK) {
@@ -209,7 +209,7 @@ void TMyMainWindow::CmFileSaveAs()
     unique_ptr<Gdiplus::PropertyItem> propertyItemWinTitle(new Gdiplus::PropertyItem);
     {
         auto* propertyItem = propertyItemWinTitle.get();
-        wchar_t propertyValue[] = L"mandel";
+        wchar_t propertyValue[] = L"GoldenMandel";
         propertyItem->id = PropertyTagWindowsSpecificTitle;
         propertyItem->length = sizeof(propertyValue); // L'\0' 終端含むバイト数
         propertyItem->type = PropertyTagTypeByte;
@@ -270,7 +270,7 @@ public:
 
 int OwlMain(int argc, _TCHAR* argv[])
 {
-    tstring title = _T("mandel");
+    tstring title = _T("GoldenMandel");
     if (sizeof(void*) == 8)
         title += _T(" [64bit]");
 #if !defined(NDEBUG)
@@ -281,7 +281,7 @@ int OwlMain(int argc, _TCHAR* argv[])
     try {
         StartDebugMonitor(title.c_str());
         locale::global(locale(locale::classic(), "", locale::ctype));
-        TProfileFileName::Instance().Init(argv[0], _T("mandel.ini"));
+        TProfileFileName::Instance().Init(argv[0], _T("GoldenMandel.ini"));
         // 同時実行スレッド数を取得してみる
         TProfile profile(_T("Draw"), TProfileFileName::Instance().GetFilePath());
         int threads = profile.GetInt(_T("Threads"), GetNumberOfProcessors());

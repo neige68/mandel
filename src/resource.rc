@@ -56,7 +56,7 @@ CAPTION "ÉoÅ[ÉWÉáÉìèÓïÒ"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,75,65,50,14
-    LTEXT           "mandel Ver.0.00.00",IDC_TITLE,66,6,64,8
+    LTEXT           "GoldenMandel Ver.0.00.00",IDC_TITLE,60,6,76,8
     LTEXT           "(C) neige68",IDC_COPYRIGHT,78,24,38,8
     LTEXT           "https://github.com/neige68/mandel",IDC_URL,42,36,120,12
     LTEXT           "This program is released under license GPLv3",IDC_LICENSE,30,48,144,8

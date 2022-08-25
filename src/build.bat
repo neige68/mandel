@@ -1,7 +1,7 @@
 @rem <build.bat> -*- coding: cp932-dos -*- - build script
 @echo off
 rem
-rem Project try-mandel
+rem Project GoldenMandel
 rem Copyright (C) 2022 neige68
 rem https://github.com/neige68/mandel
 rem This program is released under license GPLv3

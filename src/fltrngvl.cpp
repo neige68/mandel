@@ -1,6 +1,6 @@
 // <fltrngvl.cpp> -*- coding: cp932 -*-
 //
-// Project mandel
+// Project GoldenMandel
 // Copyright (C) 2022 neige68
 // https://github.com/neige68/mandel
 // This program is released under license GPLv3
@@ -18,7 +18,7 @@
 using namespace std;
 using namespace owl;
 
-DIAG_DEFINE_GROUP_INIT("MANDEL.INI", FLTRNGVL, true, 1);
+DIAG_DEFINE_GROUP_INIT("GoldenMandel.INI", FLTRNGVL, true, 1);
 
 //------------------------------------------------------------
 //

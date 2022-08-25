@@ -1,6 +1,6 @@
 // <res.rc> -*- coding: cp932; mode: c++ -*-
 //
-// Project mandel
+// Project GoldenMandel
 // Copyright (C) 2022 neige68
 // https://github.com/neige68/mandel
 // This program is released under license GPLv3
@@ -49,9 +49,9 @@
             VALUE "CompanyName", VER_COMPANYNAME
             VALUE "FileDescription", VER_FILEDESCRIPTION
             VALUE "FileVersion", VER_FILEVERSION_STR
-            VALUE "InternalName", "MANDEL"
+            VALUE "InternalName", "GoldenMandel"
             VALUE "LegalCopyright", VER_LEGALCOPYRIGHT
-            VALUE "OriginalFilename", "MANDEL.EXE"
+            VALUE "OriginalFilename", "GoldenMandel.exe"
             VALUE "ProductName", VER_PRODUCTNAME
             VALUE "ProductVersion", VER_PRODUCTVERSION_STR
 #ifdef NDEBUG

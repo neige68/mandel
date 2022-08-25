@@ -1,6 +1,6 @@
 // <version.h> -*- coding: cp932; mode: c++ -*-
 //
-// Project mandel
+// Project GoldenMandel
 // Copyright (C) 2022 neige68
 // https://github.com/neige68/mandel
 // This program is released under license GPLv3
@@ -14,7 +14,7 @@
 //------------------------------------------------------------
 
 #define VER_COMPANYNAME                 "neige68"
-#define VER_PRODUCTNAME                 "mandel"
+#define VER_PRODUCTNAME                 "GoldenMandel"
 
 // リリース・パッチ番号
 #define VER_RELEASE_STR                 "0"
