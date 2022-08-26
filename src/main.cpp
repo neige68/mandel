@@ -262,7 +262,10 @@ public:
     TMyApp(tstring& title) : TApplication(title) {}
     void InitMainWindow() override {
         TRACEX(MAIN, 10, "TMyApp::InitMainWindow");
-        SetMainWindow(new TMyMainWindow(GetName()));
+        auto frame = new TMyMainWindow(GetName());
+        frame->SetIcon(this, IDI_APP);
+        frame->SetIconSm(this, IDI_APP);
+        SetMainWindow(frame);
     }
 };
 
