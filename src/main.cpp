@@ -230,11 +230,11 @@ void TMyMainWindow::CmFileSaveAs()
         if (Gdiplus::Status s = gdip_bmp->SetPropertyItem(propertyItem))
             throw runtime_error{GdiplusStatusToString(s) + " @Gdiplus::Image::SetPropertyItem."};
     }
-    // とりあえず PNG
-    CLSID clsidPNGCodec;
-    if (HRESULT hr = CLSIDFromString(L"{557CF401-1A04-11D3-9A73-0000F81EF32E}", &clsidPNGCodec))
+    // とりあえず Jpeg
+    CLSID clsidJpegCodec;
+    if (HRESULT hr = CLSIDFromString(L"{557CF401-1A04-11D3-9A73-0000F81EF32E}", &clsidJpegCodec))
         throw runtime_error{TString(ErrorMessage(hr) + _T("(JPEG エンコーダー)"))};
-    if (Gdiplus::Status s = gdip_bmp->Save(FileData.FileName, &clsidPNGCodec))
+    if (Gdiplus::Status s = gdip_bmp->Save(FileData.FileName, &clsidJpegCodec))
         throw runtime_error{GdiplusStatusToString(s) + "(GDI+ Save)"};
 }
 
