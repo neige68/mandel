@@ -17,7 +17,7 @@ MFC より古くからある C++ Windows アプリフレームワーク OWL (Obj
 
 ## スクリーンショット
 
-<img src="https://user-images.githubusercontent.com/89586482/183108358-a574f250-998c-47a0-b8fc-07c73761335b.png" width="384" heighe="227" title="初期ウィンドウ"><img src="https://user-images.githubusercontent.com/89586482/183108388-b99b7be2-2989-468c-a146-e3a1edc08086.png" width="384" heighe="227" title="描画ウィンドウ"><img src="https://user-images.githubusercontent.com/89586482/183108376-d946093d-890b-4240-ad13-64ad5373e346.png" width="334" height="227" title="色設定ダイアログ">
+<img src="https://user-images.githubusercontent.com/89586482/186931941-5035816a-5f60-4c38-932b-35046f6f8f8a.png" width="384" heighe="227" title="初期ウィンドウ"><img src="https://user-images.githubusercontent.com/89586482/186932011-bf8a735b-527c-4d0f-b0f1-b858010b8e91.png" width="384" heighe="227" title="描画ウィンドウ"><img src="https://user-images.githubusercontent.com/89586482/186931995-19a0cb7f-e090-46cb-8ff5-35ee7279b3be.png" width="334" height="227" title="色設定ダイアログ">
 
 ## 特徴
 
