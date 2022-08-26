@@ -106,7 +106,7 @@ owl::tstring TDrawWindow::GetDescription() const
     oss << setprecision(numeric_limits<double>::digits10 + 1)
         << _T("Pos=(") << ocPoint.x << _T(',') << ocPoint.y << _T(')') << endl;
     oss << setprecision(numeric_limits<float>::digits10)
-        << _T("Ratio=") << Magnification << endl;
+        << _T("Magnification=") << Magnification << endl;
     oss << _T("ColorMap=") << ColorMap.Encode();
     return oss.str();
 }
