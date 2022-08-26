@@ -7,7 +7,6 @@
 #
 
 cmake_minimum_required(VERSION 3.16)
-set(CMAKE_VERBOSE_MAKEFILE ON) # TODO: いる?
 
 # スタティックリンク
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
@@ -42,22 +41,17 @@ link_directories(${OWL}/lib)
 set(CMAKE_CXX_STANDARD "17")
 
 # /MP: マルチプロセス
-# /wd4068: warning C4068: 不明なプラグマがありました。をオフに設定
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP /wd4068")
-# /EHsc: 例外に関する推奨オプションだけど、OWL に必須だと思われる
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc")
+# /EHsc: 例外に関する推奨オプション、OWL に必須だと思われる
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP /EHsc")
 # OWL 用のデバッグオプション
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /D__TRACE /D__WARN /D__DEBUG=2")
 
-# TODO: いる?
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS")
-
 add_compile_definitions(_WIN32_WINNT=0x0600) # Vista 以上
-add_compile_definitions(_OWLPCH)
+add_compile_definitions(_OWLPCH) # OWL プリコンパイルヘッダ
 add_compile_definitions(UNICODE;_UNICODE)
 add_link_options(/ENTRY:wWinMainCRTStartup)
 
-add_executable(GoldenMandel # TODO: WIN32 とかは?
+add_executable(GoldenMandel WIN32
     main.cpp misc.cpp pointd.cpp drawwndw.cpp colordlg.cpp colormap.cpp fltrngvl.cpp
     mandel.rc resource.rc)
 
