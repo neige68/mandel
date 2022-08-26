@@ -126,8 +126,6 @@ src ディレクトリで build.bat を実行してください
 
 ## 今後の予定
 
-* 拡大縮小の連続化
-
 * パラメータを変更可能にする
 
 * GPU 使用(OpenCL, Boost Compute 予定, float 対応)
