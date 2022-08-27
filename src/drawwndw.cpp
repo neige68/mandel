@@ -126,7 +126,7 @@ void TDrawWindow::UpdateStatusBarText() const
         oss << setprecision(numeric_limits<double>::digits10 + 1)
             << _T("Pos=(") << ocPoint.x << _T(',') << ocPoint.y << _T(')');
         oss << setprecision(numeric_limits<float>::digits10)
-            << _T("; Ratio=") << Magnification;
+            << _T("; Magnification=") << Magnification;
         oss << _T("; Color=(") << color.Red() << _T(',') << color.Green() << _T(',') << color.Blue() << _T(')');
 #ifndef NDEBUG
         oss << _T("; Scroller=(") << Scroller->XPos << _T(',') << Scroller->YPos << _T(')')
