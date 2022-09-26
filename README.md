@@ -45,8 +45,7 @@ Windows Vista 以降
 
 ## バイナリリリース使用方法
 
-[Releases](https://github.com/neige68/mandel/releases) から zip ファイルをダウンロードし、
-好きなディレクトリに解凍して GoldenMandel.exe を実行してください
+[Releases](https://github.com/neige68/mandel/releases) からインストーラをダウンロードしてインストールして下さい。
 
 ## 操作
 
