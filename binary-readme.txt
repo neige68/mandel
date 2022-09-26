@@ -1,5 +1,5 @@
 【ソフト名　】 GoldenMandel
-【バージョン】 0.0.0
+【バージョン】 0.0.1
 【動作確認　】 Windows 10
 【種別　　　】 フリーソフトウェア
 【転載・条件】 GPLv3 に従ってください
@@ -92,3 +92,7 @@ LICENSE - GNU GENERAL PUBLIC LICENSE Version 3 (GPLv3)
 Ver.0.0.0 (2022/08/26)
 
 テストリリース
+
+Ver.0.0.1 (2022/09/27)
+
+インストーラ作成

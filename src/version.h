@@ -17,8 +17,8 @@
 #define VER_PRODUCTNAME                 "GoldenMandel"
 
 // リリース・パッチ番号
-#define VER_RELEASE_STR                 "0"
-#define VER_RELEASE                     0
+#define VER_RELEASE_STR                 "1"
+#define VER_RELEASE                     1
 #define VER_PATCH_STR                   "" // "" もしくは ".x"
 #define VER_PATCH                       0
 
