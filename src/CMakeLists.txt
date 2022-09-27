@@ -55,3 +55,4 @@ add_executable(GoldenMandel WIN32
     main.cpp misc.cpp pointd.cpp drawwndw.cpp colordlg.cpp colormap.cpp fltrngvl.cpp
     mandel.rc resource.rc)
 
+# end of <CMakeLists.txt>
