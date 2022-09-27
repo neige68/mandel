@@ -91,7 +91,7 @@ TDrawWindow::TDrawWindow() :
     TickDrew(0)
 {
     Attr.Style |= WS_HSCROLL | WS_VSCROLL;
-    Magnification = 200.0;
+    Scale = 200.0;
     IterationLimit = 512;
     DivergenceThresholdAbs = 2.0;
     SetCursor(0, IDC_HAND);
@@ -106,7 +106,7 @@ owl::tstring TDrawWindow::GetDescription() const
     oss << setprecision(numeric_limits<double>::digits10 + 1)
         << _T("Pos=(") << ocPoint.x << _T(',') << ocPoint.y << _T(')') << endl;
     oss << setprecision(numeric_limits<float>::digits10)
-        << _T("Magnification=") << Magnification << endl;
+        << _T("Scale=") << Scale << endl;
     oss << _T("ColorMap=") << ColorMap.Encode();
     return oss.str();
 }
@@ -126,7 +126,7 @@ void TDrawWindow::UpdateStatusBarText() const
         oss << setprecision(numeric_limits<double>::digits10 + 1)
             << _T("Pos=(") << ocPoint.x << _T(',') << ocPoint.y << _T(')');
         oss << setprecision(numeric_limits<float>::digits10)
-            << _T("; Magnification=") << Magnification;
+            << _T("; Scale=") << Scale;
         oss << _T("; Color=(") << color.Red() << _T(',') << color.Green() << _T(',') << color.Blue() << _T(')');
 #ifndef NDEBUG
         oss << _T("; Scroller=(") << Scroller->XPos << _T(',') << Scroller->YPos << _T(')')
@@ -736,8 +736,8 @@ void TDrawWindow::Zoom(double rate, const TPoint& ccPoint)
     TPointD ocPoint = MapVirtualToObject(vcPoint);
     TRACEX(DRAWWNDW, 0, _T("TDrawWindow::Zoom|rate=") << rate << _T("|ccPoint=") << ccPoint << _T("|vcPoint=") << vcPoint);
     // 倍率変更
-    Magnification *= rate;
-    TRACEX(DRAWWNDW, 0, _T("TDrawWindow::Zoom|ocPoint=") << ocPoint << _T("|Magnification=") << Magnification);
+    Scale *= rate;
+    TRACEX(DRAWWNDW, 0, _T("TDrawWindow::Zoom|ocPoint=") << ocPoint << _T("|Scale=") << Scale);
     // スクローラの範囲
     GetScroller()->SetRange(vcsRange, vcsRange);
     TRACEX(DRAWWNDW, 0, _T("TDrawWindow::Zoom|after-SetRange"));

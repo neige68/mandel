@@ -75,18 +75,18 @@ public:
         return vcPoint.OffsetBy(-Scroller->XPos, -Scroller->YPos);
     }
     TPointD MapVirtualToObject(const TPoint& vcPoint) const {
-        return TPointD( (vcPoint.x - VCBasePoint.x) / Magnification + OCBasePoint.x,
-                       -(vcPoint.y - VCBasePoint.y) / Magnification + OCBasePoint.y);
+        return TPointD( (vcPoint.x - VCBasePoint.x) / Scale + OCBasePoint.x,
+                       -(vcPoint.y - VCBasePoint.y) / Scale + OCBasePoint.y);
     }
     double MapVirtualToObjectX(int vcX) const {
-        return (vcX - VCBasePoint.x) / Magnification + OCBasePoint.x;
+        return (vcX - VCBasePoint.x) / Scale + OCBasePoint.x;
     }
     double MapVirtualToObjectY(int vcY) const {
-        return -(vcY - VCBasePoint.y) / Magnification + OCBasePoint.y;
+        return -(vcY - VCBasePoint.y) / Scale + OCBasePoint.y;
     }
     TPoint MapObjectToVirtual(const TPointD& ocPoint) const {
-        return TPoint( (ocPoint.x - OCBasePoint.x) * Magnification + VCBasePoint.x,
-                      -(ocPoint.y - OCBasePoint.y) * Magnification + VCBasePoint.y);
+        return TPoint( (ocPoint.x - OCBasePoint.x) * Scale + VCBasePoint.x,
+                      -(ocPoint.y - OCBasePoint.y) * Scale + VCBasePoint.y);
     }
 
     // *** owl override ***
@@ -140,7 +140,7 @@ private:
     owl::TStatusBar* StatusBar;
     bool timer;
     std::queue<owl::TRect> VCRectsToInvalidate;  // 後のタイマイベントで無効化する領域
-    double Magnification;                        // 表示倍率
+    double Scale;                                // 表示倍率
     TPoint VCBasePoint;                          // 仮想座標基準点
     TPointD OCBasePoint;                         // 対象座標基準点
     TPoint CCDragStart; // ドラッグ開始クライアント座標、未使用時(-1,-1)
