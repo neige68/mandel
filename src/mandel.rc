@@ -126,6 +126,7 @@ MAIN_MENU MENU
     }
     POPUP "ヘルプ(&H)"
     {
+        MENUITEM "README.txt を表示(&R)", CM_HELPREADME
         MENUITEM "バージョン情報(&A)", CM_HELPABOUT
     }
 }

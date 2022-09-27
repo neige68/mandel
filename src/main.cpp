@@ -101,16 +101,18 @@ class TMyMainWindow : public TDecoratedFrame {
 
     // *** constructor ***
 public:
-    TMyMainWindow(LPCTSTR title);
+    TMyMainWindow(tstring exePath, LPCTSTR title);
 
     // *** response ***
     void CmFileSaveAs();
     void CmColor();
     void CmColorRandom();
     void CmHelpAbout() { TAboutDialog(this).Execute(); }
+    void CmHelpReadMe();
 
     // *** data ***
 private:
+    tstring ExePath;
     TDrawWindow* DrawWindow;
         
     DECLARE_RESPONSE_TABLE(TMyMainWindow);
@@ -120,11 +122,12 @@ DEFINE_RESPONSE_TABLE1(TMyMainWindow, TDecoratedFrame)
     EV_COMMAND(CM_FILESAVEAS, CmFileSaveAs),
     EV_COMMAND(CM_COLOR, CmColor),
     EV_COMMAND(CM_COLORRANDOM, CmColorRandom),
+    EV_COMMAND(CM_HELPREADME, CmHelpReadMe),
     EV_COMMAND(CM_HELPABOUT, CmHelpAbout),
 END_RESPONSE_TABLE;
 
-TMyMainWindow::TMyMainWindow(LPCTSTR title) :
-    TDecoratedFrame(0, title, DrawWindow = new TDrawWindow)
+TMyMainWindow::TMyMainWindow(tstring exePath, LPCTSTR title) :
+    TDecoratedFrame(0, title, DrawWindow = new TDrawWindow), ExePath(exePath)
 {
     AssignMenu(MAIN_MENU);
     Attr.AccelTable = MAIN_ACCELERATORS;
@@ -252,6 +255,28 @@ void TMyMainWindow::CmColorRandom()
     DrawWindow->SetColorMap(cm);
 }
 
+void TMyMainWindow::CmHelpReadMe()
+{
+    filesystem::path path{ExePath};
+    filesystem::path toOpen;
+    for (int i = 0; i < 3; i++) { // 遡ってファイルを探す
+        path = path.parent_path();
+        if (path.empty()) break;
+        auto readme = path / L"readme.txt";
+        if (filesystem::exists(readme)) {
+            toOpen = readme;
+            break;
+        }
+        readme = path / L"binary-readme.txt";
+        if (filesystem::exists(readme)) {
+            toOpen = readme;
+            break;
+        }
+    }
+    if (!toOpen.empty())
+        ShellExecute(*this, _T("open"), toOpen.c_str(), nullptr, nullptr, SW_SHOW);
+}
+
 //------------------------------------------------------------
 //
 // class TMyApp - アプリケーション
@@ -259,14 +284,16 @@ void TMyMainWindow::CmColorRandom()
 
 class TMyApp : public TApplication {
 public:
-    TMyApp(tstring& title) : TApplication(title) {}
+    TMyApp(const tstring& exePath, const tstring& title) : TApplication(title), ExePath(exePath) {}
     void InitMainWindow() override {
         TRACEX(MAIN, 10, "TMyApp::InitMainWindow");
-        auto frame = new TMyMainWindow(GetName());
+        auto frame = new TMyMainWindow(ExePath, GetName());
         frame->SetIcon(this, IDI_APP);
         frame->SetIconSm(this, IDI_APP);
         SetMainWindow(frame);
     }
+private:
+    tstring ExePath;
 };
 
 //------------------------------------------------------------
@@ -290,7 +317,7 @@ int OwlMain(int argc, _TCHAR* argv[])
         int threads = profile.GetInt(_T("Threads"), GetNumberOfProcessors());
         TRACEX(MAIN, 0, "OwlMain|threads=" << threads);
         //
-        TMyApp(title).Run();
+        TMyApp(argv[0], title).Run();
     }
     catch (const exception& x) {
         MessageBox(0, TString(x.what()), title.c_str(), MB_OK);

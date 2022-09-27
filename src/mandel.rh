@@ -33,6 +33,7 @@
 #define CM_COLOR                                201
 #define CM_COLORRANDOM                          202
 #define CM_HELPABOUT                            203
+#define CM_HELPREADME                           204
 
 #endif // MANDEL_RH
 
