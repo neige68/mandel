@@ -45,7 +45,9 @@ Windows Vista 以降
 
 ## バイナリリリース使用方法
 
-[Releases](https://github.com/neige68/mandel/releases) からインストーラをダウンロードしてインストールして下さい。
+[Releases](https://github.com/neige68/mandel/releases) から
+インストールパッケージ(.msi ファイル)をダウンロードして実行してください
+
 
 ## 操作
 
