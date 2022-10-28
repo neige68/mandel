@@ -17,18 +17,18 @@
 #define VER_PRODUCTNAME                 "GoldenMandel"
 
 // リリース・パッチ番号
-#define VER_RELEASE_STR                 "2"
-#define VER_RELEASE                     2
+#define VER_RELEASE_STR                 "0"
+#define VER_RELEASE                     0
 #define VER_PATCH_STR                   "" // "" もしくは ".x"
 #define VER_PATCH                       0
 
 // 製品バージョン
-#define VER_PRODUCTVERSION_STR          "0.0"
-#define VER_PRODUCTVERSION              0,0,VER_RELEASE,VER_PATCH
+#define VER_PRODUCTVERSION_STR          "1.0"
+#define VER_PRODUCTVERSION              1,0,VER_RELEASE,VER_PATCH
 
 // ファイルバージョン
-#define VER_FILEVERSION_STR             "0.0." VER_RELEASE_STR VER_PATCH_STR
-#define VER_FILEVERSION                 0,0,VER_RELEASE,VER_PATCH
+#define VER_FILEVERSION_STR             "1.0." VER_RELEASE_STR VER_PATCH_STR
+#define VER_FILEVERSION                 1,0,VER_RELEASE,VER_PATCH
 
 // ファイル説明
 #define VER_FILEDESCRIPTION             "マンデルブロ集合描画"
