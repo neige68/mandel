@@ -42,6 +42,34 @@ using namespace owl;
 DIAG_DEFINE_GROUP_INIT("GoldenMandel.INI", MAIN, true, 1);
 
 //------------------------------------------------------------
+
+// エンコーダを取得
+//
+// 例: GetEncoderClsid(L"image/jpeg", &clsidJpegCodec);
+//
+// return: 成功時は非負の値, エラー時は -1
+static
+int GetEncoderClsid(const std::wstring& format, CLSID* pClsid)
+{
+    UINT num = 0;          // number of image encoders
+    UINT size = 0;         // size of the image encoder array in bytes
+    Gdiplus::GetImageEncodersSize(&num, &size);
+    if (size == 0)
+        return -1;  // Failure
+    std::vector<char> buf(size);
+    auto pImageCodecInfo = reinterpret_cast<Gdiplus::ImageCodecInfo*>(&buf[0]);
+    Gdiplus::GetImageEncoders(num, size, pImageCodecInfo);
+    for (UINT j = 0; j < num; ++j) {
+        if (pImageCodecInfo[j].MimeType == format) {
+            if (pClsid)
+                *pClsid = pImageCodecInfo[j].Clsid;
+            return j;           // Success
+        }    
+    }
+    return -1;  // Failure
+}
+
+//------------------------------------------------------------
 //
 // class TAboutDialog - バージョン情報ダイアログ
 //
@@ -235,8 +263,8 @@ void TMyMainWindow::CmFileSaveAs()
     }
     // とりあえず Jpeg
     CLSID clsidJpegCodec;
-    if (HRESULT hr = CLSIDFromString(L"{557CF401-1A04-11D3-9A73-0000F81EF32E}", &clsidJpegCodec))
-        throw runtime_error{TString(ErrorMessage(hr) + _T("(JPEG エンコーダー)"))};
+    if (GetEncoderClsid(L"image/jpeg", &clsidJpegCodec) < 0)
+        throw runtime_error{"JPEG エンコーダーがありません."};
     if (Gdiplus::Status s = gdip_bmp->Save(FileData.FileName, &clsidJpegCodec))
         throw runtime_error{GdiplusStatusToString(s) + "(GDI+ Save)"};
 }
