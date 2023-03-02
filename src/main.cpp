@@ -160,7 +160,8 @@ TMyMainWindow::TMyMainWindow(tstring exePath, LPCTSTR title) :
     AssignMenu(MAIN_MENU);
     Attr.AccelTable = MAIN_ACCELERATORS;
     uint modeIndicators = TStatusBar::SizeGrip;
-    TStatusBar* statusBar = new TStatusBar(this, TGadget::Recessed, modeIndicators, new TGadgetWindowFont(10));
+    TStatusBar* statusBar = new TStatusBar(this, TGadget::Recessed, modeIndicators,
+                                           new TDefaultGuiFont{TDefaultGuiFont::sfiStatus});
     Insert(*statusBar, TDecoratedFrame::Bottom);
     DrawWindow->SetStatusBar(statusBar);
 }
